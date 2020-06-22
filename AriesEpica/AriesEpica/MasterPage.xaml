@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:AriesEpica"
+             x:Class="AriesEpica.MasterPage" Title="MasterPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Image Source="bg.png" Aspect="AspectFill" />
+                <StackLayout Padding="0,20,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Frame CornerRadius="70"  Padding="0"  IsClippedToBounds="True">
+                        <Image Source="profile.jpg" Aspect="AspectFill" HeightRequest="110" WidthRequest="85"  />
+                    </Frame>
+                    <!--<ImageButton BorderColor="White"  Source="profile.png" Aspect="AspectFill" WidthRequest="40" HeightRequest="40" CornerRadius="20"  />-->
+                    <Label Text="Adam Pedley" TextColor="White" FontSize="20" />
+                </StackLayout>
+            </Grid>
+            <StackLayout Margin="20,20,20,0" Grid.Row="1" Spacing="15">
+                <local:NavigationItem Text="Dashboard" Icon="fa-archive" Command="{Binding NavigationCommand}" CommandParameter="1" />
+                <ContentView HeightRequest="1" BackgroundColor="Gray" />
+                <local:NavigationItem Text="About Us" Icon="fa-archive" Command="{Binding NavigationCommand}" CommandParameter="2" />
+                <ContentView HeightRequest="1" BackgroundColor="Gray" />
+                <local:NavigationItem Text="Logout" Icon="fa-cog" Command="{Binding NavigationCommand}" CommandParameter="3" />
+                <ContentView HeightRequest="1" BackgroundColor="Gray" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
